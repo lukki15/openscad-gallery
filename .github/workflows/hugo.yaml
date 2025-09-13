@@ -22,12 +22,23 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    env:
+      TAILWINDCSS_VERSION: 4.1.13
+      TAILWINDCSS_FILE: tailwindcss-linux-x64
     steps:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.150.0"
+          hugo-version: "latest"
           # extended: true
+
+      - name: Download TailwindCSS
+        run: wget "https://github.com/tailwindlabs/tailwindcss/releases/download/v${TAILWINDCSS_VERSION}/${TAILWINDCSS_FILE}"
+      - name: Install TailwindCSS binary
+        run: |
+          chmod +x "${TAILWINDCSS_FILE}"
+          sudo mv "${TAILWINDCSS_FILE}" /usr/local/bin/tailwindcss
+          tailwindcss --version
 
       - name: Checkout
         uses: actions/checkout@v4
