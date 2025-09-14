@@ -11,6 +11,9 @@ title = 'OpenSCAD gallery theme'
     source = '(postcss|tailwind)\.config\.js'
     target = 'css'
 [module]
+  [module.hugoVersion]
+    extended = false
+    min = '0.146.0'
   [[module.mounts]]
     source = 'assets'
     target = 'assets'
