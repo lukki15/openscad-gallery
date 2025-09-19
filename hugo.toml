@@ -1,6 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'My OpenSCAD Projects'
 theme = 'openscad-gallery'
 
 [menus]
@@ -10,7 +10,7 @@ theme = 'openscad-gallery'
     weight = 10
 
   [[menus.main]]
-    name = 'Posts'
+    name = 'Gallery'
     pageRef = '/posts'
     weight = 20
 
