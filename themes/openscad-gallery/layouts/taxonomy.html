@@ -1,7 +1,24 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
+
+<div class="relative pt-36 ml-auto py-16 mb-16">
+  <div class="lg:w-2/3 text-center mx-auto">
+    <h1
+      class="text-gray-900 text-balance dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl"
+    >
+      {{ .Title }}
+    </h1>
+  </div>
+</div>
+
+<div class="relative flex flex-row gap-6 flex-wrap justify-center items-center">
   {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-  {{ end }}
+  <a
+    href="{{ .RelPermalink }}"
+    class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center rounded-2xl bg-white border border-gray-100 dark:text-white dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10"
+  >
+    {{ .Title }}
+  </a>
+  {{- end }}
+</div>
+
 {{ end }}
